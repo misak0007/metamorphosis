@@ -1,0 +1,3 @@
+[submodule "net/asterisk-sound-digium"]
+	path = net/asterisk-sound-digium
+	url = git@github.com:misak0007/asterisk-sound-digium.git
