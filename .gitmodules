@@ -1,6 +1,6 @@
-[submodule "net/asterisk-sound-digium"]
-	path = net/asterisk-sound-digium
-	url = git@github.com:misak0007/asterisk-sound-digium.git
 [submodule "net/asterisk-sounds-cs"]
 	path = net/asterisk-sounds-cs
 	url = git@github.com:misak0007/asterisk-sounds-cs.git
+[submodule "net/asterisk-sounds-digium"]
+	path = net/asterisk-sounds-digium
+	url = git@github.com:misak0007/asterisk-sounds-digium.git
