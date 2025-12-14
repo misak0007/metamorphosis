@@ -8,7 +8,7 @@ include $(TOPDIR)/rules.mk
 LUCI_TITLE:=LuCI support for nfs
 LUCI_DEPENDS:=+luci-compat +nfs-utils +nfs-kernel-server +nfs-kernel-server-utils +mount-utils
 
-include ../../luci.mk
+include $(TOPDIR)/feeds/luci/luci.mk
 
 # call BuildPackage - OpenWrt buildroot signature
 
