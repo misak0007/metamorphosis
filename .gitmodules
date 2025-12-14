@@ -25,3 +25,6 @@
 [submodule "luci-app-temp-status"]
 	path = luci-app-temp-status
 	url = git@github.com:gSpotx2f/luci-app-temp-status.git
+[submodule "net/stun"]
+	path = net/stun
+	url = git://git.archive.openwrt.org/packages.git
