@@ -22,9 +22,9 @@
 [submodule "applications/luci-app-vsftpd"]
 	path = applications/luci-app-vsftpd
 	url = git@github.com:immortalwrt/luci.git
-[submodule "luci-app-temp-status"]
-	path = luci-app-temp-status
-	url = git@github.com:gSpotx2f/luci-app-temp-status.git
 [submodule "net/stun"]
 	path = net/stun
 	url = git://git.archive.openwrt.org/packages.git
+[submodule "applications/luci-app-temp-status"]
+	path = applications/luci-app-temp-status
+	url = git@github.com:gSpotx2f/luci-app-temp-status.git
