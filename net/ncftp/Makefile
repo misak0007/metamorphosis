@@ -9,13 +9,13 @@ include $(TOPDIR)/rules.mk
 
 PKG_NAME:=ncftp
 PKG_VERSION:=3.3.0
-PKG_RELEASE:=1
+PKG_RELEASE:=2
 
 PKG_INSTALL:=1
 
 PKG_SOURCE:=$(PKG_NAME)-$(PKG_VERSION)-src.tar.gz
 PKG_SOURCE_URL:=https://www.ncftp.com/public_ftp/ncftp
-PKG_MD5SUM:=886d757702133f5d6d105a9af6acd8f4
+PKG_MD5SUM:=43056719c50cae2ed6b614e20c86d37e,
 
 include $(INCLUDE_DIR)/package.mk
 
