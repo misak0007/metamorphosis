@@ -10,7 +10,7 @@ PKG_NAME:=oscam
 PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
-PKG_SOURCE_URL:=https://git.streamboard.tv/common/oscam.git
+PKG_SOURCE_URL:=https://github.com/oscam-mirror/oscam-emu.git
 
 #PKG_REV:=$(shell LC_ALL=C rm -rf oscam && git clone ${PKG_SOURCE_URL} oscam && cd oscam && ./config.sh -c)
 #PKG_REV:=$(shell LC_ALL=C rm -rf oscam && git clone ${PKG_SOURCE_URL} oscam && cd oscam && ./config.sh -v | cut -d"-" -f2)
@@ -24,7 +24,7 @@ PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
 
 PKG_LICENSE:=GPL-3.0
 PKG_LICENSE_FILES:=COPYING
-PKG_MAINTAINER:=Tomasz Maciej Nowak <tomek_n@o2.pl>
+PKG_MAINTAINER:=Guru people <gutu@planet.com>
 
 PKG_BUILD_PARALLEL:=1
 

@@ -1,0 +1,19 @@
+#!/bin/sh /etc/rc.common
+# Copyright (C) 2016 OpenWrt.org
+
+START=50
+
+start() {
+	local section="oscam"
+	config_load "oscam"
+	config_get_bool enabled "$section" "enabled" "1"
+	[ "$enabled" = "0" ] && return
+	/usr/bin/oscam &
+	echo "OSCAM Server has started."
+}
+
+stop() {
+    killall -q -9 oscam
+    echo "OSCAM Server has stopped."
+}
+
