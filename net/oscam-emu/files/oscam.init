@@ -8,12 +8,12 @@ start() {
 	config_load "oscam"
 	config_get_bool enabled "$section" "enabled" "1"
 	[ "$enabled" = "0" ] && return
-	/usr/bin/oscam &
+	/usr/bin/oscam-emu &
 	echo "OSCAM Server has started."
 }
 
 stop() {
-    killall -q -9 oscam
+    killall -q -9 oscam-emu
     echo "OSCAM Server has stopped."
 }
 

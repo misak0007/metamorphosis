@@ -6,18 +6,18 @@
 #
 include $(TOPDIR)/rules.mk
 
-PKG_NAME:=oscam
+PKG_NAME:=oscam-emu
 PKG_RELEASE:=1
 
 PKG_SOURCE_PROTO:=git
 PKG_SOURCE_URL:=https://github.com/oscam-mirror/oscam-emu.git
 
-#PKG_REV:=$(shell LC_ALL=C rm -rf oscam && git clone ${PKG_SOURCE_URL} oscam && cd oscam && ./config.sh -c)
-#PKG_REV:=$(shell LC_ALL=C rm -rf oscam && git clone ${PKG_SOURCE_URL} oscam && cd oscam && ./config.sh -v | cut -d"-" -f2)
-PKG_VERSION:=$(shell LC_ALL=C rm -rf oscam && git clone ${PKG_SOURCE_URL} oscam && cd oscam && ./config.sh -v | cut -d"-" -f2)
+#PKG_REV:=$(shell LC_ALL=C rm -rf oscam-emu && git clone ${PKG_SOURCE_URL} oscam-emu && cd oscam-emu && ./config.sh -c)
+#PKG_REV:=$(shell LC_ALL=C rm -rf oscam-emu && git clone ${PKG_SOURCE_URL} oscam-emu && cd oscam-emu && ./config.sh -v | cut -d"-" -f2)
+PKG_VERSION:=$(shell LC_ALL=C rm -rf oscam-emu && git clone ${PKG_SOURCE_URL} oscam-emu && cd oscam-emu && ./config.sh -v | cut -d"-" -f2)
 
 
-PKG_SOURCE_VERSION:=$(shell LC_ALL=C rm -rf oscam && git clone ${PKG_SOURCE_URL} oscam && cd oscam && git show-ref --head --hash head)
+PKG_SOURCE_VERSION:=$(shell LC_ALL=C rm -rf oscam-emu && git clone ${PKG_SOURCE_URL} oscam-emu && cd oscam-emu && git show-ref --head --hash head)
 PKG_SOURCE_SUBDIR:=$(PKG_NAME)-$(PKG_VERSION)
 PKG_SOURCE:=$(PKG_SOURCE_SUBDIR).tar.bz2
 PKG_BUILD_DIR:=$(BUILD_DIR)/$(PKG_NAME)-$(PKG_VERSION)
@@ -30,11 +30,11 @@ PKG_BUILD_PARALLEL:=1
 
 include $(INCLUDE_DIR)/package.mk
 
-define Package/oscam/config
+define Package/oscam-emu/config
 	source "$(SOURCE)/Config.in"
 endef
 
-define Package/oscam
+define Package/oscam-emu
   SECTION:=net
   CATEGORY:=Network
   TITLE:=Open Source Conditional Access Modul
@@ -47,7 +47,7 @@ define Package/list-smargo
   CATEGORY:=Network
   TITLE:=List Smargo readers
   URL:=http://www.streamboard.tv/oscam
-  DEPENDS:=oscam @OSCAM_CARDREADER_SMARGO
+  DEPENDS:=oscam-emu @OSCAM_CARDREADER_SMARGO
 endef
 
 CONFIGURE_CMD:=./config.sh
@@ -128,19 +128,19 @@ endif
 
 MAKE_FLAGS += \
 	CONF_DIR=/etc/oscam \
-	OSCAM_BIN=Distribution/oscam \
+	OSCAM_BIN=Distribution/oscam-emu \
 	LIST_SMARGO_BIN=Distribution/list-smargo \
 	SVN_REV=$(PKG_VERSION)
 
 #config_files=oscam.ac oscam.cacheex oscam.cert oscam.conf oscam.dvbapi oscam.guess oscam.ird oscam.provid oscam.server oscam.services oscam.srvid oscam.tiers oscam.user oscam.whitelist
 
-define Package/oscam/conffiles
+define Package/oscam-emu/conffiles
 /etc/oscam/
 endef
 
-define Package/oscam/install
+define Package/oscam-emu/install
 	$(INSTALL_DIR) $(1)/usr/bin
-	$(INSTALL_BIN) $(PKG_BUILD_DIR)/Distribution/oscam $(1)/usr/bin/oscam
+	$(INSTALL_BIN) $(PKG_BUILD_DIR)/Distribution/oscam-emu $(1)/usr/bin/oscam-emu
 
 	$(INSTALL_DIR) $(1)/etc/oscam
 #	$(INSTALL_DATA) $(addprefix $(PKG_BUILD_DIR)/Distribution/doc/example/,$(config_files)) $(1)/etc/oscam/
@@ -153,5 +153,5 @@ define Package/list-smargo/install
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/Distribution/list-smargo $(1)/usr/bin/list-smargo
 endef
 
-$(eval $(call BuildPackage,oscam))
+$(eval $(call BuildPackage,oscam-emu))
 $(eval $(call BuildPackage,list-smargo))
