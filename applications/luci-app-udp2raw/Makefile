@@ -22,8 +22,8 @@ define Package/$(PKG_NAME)
 	CATEGORY:=LuCI
 	SUBMENU:=3. Applications
 	TITLE:=LuCI Support for udp2raw-tunnel
+	DEPENDS:=+udp2raw +luci-base +luci-compat
 	PKGARCH:=all
-#	DEPENDS:=+udp2raw-tunnel
 endef
 
 define Package/$(PKG_NAME)/description
