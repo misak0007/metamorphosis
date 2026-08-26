@@ -1,0 +1,248 @@
+# Russian translation for WireGuard Obfuscator LuCI application
+# Copyright (C) 2024-2025 Alexey Cluster <cluster@cluster.wtf>
+# This file is distributed under the same license as the wg-obfuscator package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: wg-obfuscator 1.5\n"
+"POT-Creation-Date: 2025-10-27 18:00+0000\n"
+"PO-Revision-Date: 2025-10-27 18:00+0000\n"
+"Last-Translator: AI Assistant\n"
+"Language-Team: Russian\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+# Main configuration page
+msgid "WireGuard Obfuscator Configuration"
+msgstr "Настройка WireGuard Obfuscator"
+
+msgid "Configure WireGuard Obfuscator instances to obfuscate WireGuard traffic."
+msgstr "Настройка экземпляров WireGuard Obfuscator для обфускации WireGuard трафика."
+
+msgid "Instances"
+msgstr "Экземпляры"
+
+msgid "Configure individual obfuscator instances. Each instance can have different settings."
+msgstr "Настройка отдельных экземпляров обфускатора. Каждый экземпляр может иметь свои параметры."
+
+msgid "Add instance"
+msgstr "Добавить экземпляр"
+
+msgid "Name"
+msgstr "Имя"
+
+# Enable/Disable
+msgid "Enable"
+msgstr "Включить"
+
+msgid "Enable this instance"
+msgstr "Включить этот экземпляр"
+
+# Network settings
+msgid "Source Port"
+msgstr "Исходящий порт"
+
+msgid "Local port to listen for incoming connections"
+msgstr "Локальный порт для входящих соединений"
+
+msgid "Target"
+msgstr "Целевой сервер"
+
+msgid "Target server in format host:port"
+msgstr "Целевой сервер в формате хост:порт"
+
+msgid "Source Interface"
+msgstr "Исходящий интерфейс"
+
+msgid "Interface to bind to (0.0.0.0 for all interfaces)"
+msgstr "Интерфейс для привязки (0.0.0.0 для всех интерфейсов)"
+
+# Security settings
+msgid "Obfuscation Key"
+msgstr "Ключ обфускации"
+
+msgid "Key used for obfuscation (must be the same on both sides)"
+msgstr "Ключ для обфускации (должен совпадать на обеих сторонах)"
+
+msgid "Masking Type"
+msgstr "Тип маскировки"
+
+msgid "Protocol masking for DPI evasion"
+msgstr "Маскировка протокола для обхода DPI"
+
+msgid "None"
+msgstr "Нет"
+
+msgid "Auto-detect"
+msgstr "Автоопределение"
+
+msgid "STUN"
+msgstr "STUN"
+
+# Logging settings
+msgid "Log Level"
+msgstr "Уровень логирования"
+
+msgid "Verbosity level for logging"
+msgstr "Уровень детализации логов"
+
+msgid "Errors only"
+msgstr "Только ошибки"
+
+msgid "Warnings"
+msgstr "Предупреждения"
+
+msgid "Info"
+msgstr "Информация"
+
+msgid "Debug"
+msgstr "Отладка"
+
+msgid "Trace"
+msgstr "Трассировка"
+
+msgid "Log File"
+msgstr "Файл лога"
+
+msgid "Write the log to this file instead of the system log. Leave empty to keep using the system log (logread). Avoid writing to the router flash memory, use /tmp or an external drive instead."
+msgstr "Писать лог в этот файл вместо системного лога. Оставьте пустым, чтобы продолжать использовать системный лог (logread). Не пишите лог во флеш-память роутера, используйте /tmp или внешний накопитель."
+
+msgid "Log file path must be absolute"
+msgstr "Путь к файлу лога должен быть абсолютным"
+
+msgid "Log Timestamps"
+msgstr "Метки времени в логе"
+
+msgid "Prefix log lines with a timestamp. Automatic means timestamps are added only when a log file is used, since the system log adds its own."
+msgstr "Добавлять метку времени в начало каждой строки лога. «Автоматически» означает, что метки добавляются только при записи в файл, так как системный лог добавляет свои."
+
+msgid "Automatic"
+msgstr "Автоматически"
+
+msgid "Always"
+msgstr "Всегда"
+
+msgid "Never"
+msgstr "Никогда"
+
+# Advanced settings
+msgid "Max Clients"
+msgstr "Макс. клиентов"
+
+msgid "Maximum number of concurrent clients"
+msgstr "Максимальное количество одновременных клиентов"
+
+msgid "Idle Timeout"
+msgstr "Таймаут простоя"
+
+msgid "Idle timeout in seconds"
+msgstr "Таймаут простоя в секундах"
+
+msgid "Resolve Interval"
+msgstr "Интервал резолва"
+
+msgid "Re-resolve the target hostname and hostnames in static bindings every N seconds (0 = only at start and on service reload). A non-zero value also retries a failed resolve at startup instead of exiting. Lookups run in the background and do not stall traffic."
+msgstr "Повторно резолвить имя target и имена в статических привязках каждые N секунд (0 = только при старте и при перезагрузке службы). Ненулевое значение также повторяет неудачный резолв при старте вместо выхода. Запросы идут в фоне и не тормозят трафик."
+
+msgid "Incoming Timeout"
+msgstr "Входящий таймаут"
+
+msgid "Same as Idle Timeout, but only counts data received from the target (0 = disabled). Intended for clients: detects a dead or silently blocked server. If the client is still active and static bindings are not used, a new session is created with a fresh outbound UDP port. Useful when DPI bans a particular IP:port pair."
+msgstr "То же, что Idle Timeout, но учитывает только данные от целевого сервера (0 = выключено). Для клиентов: детектирует мёртвый или молча заблокированный сервер. Если клиент ещё активен и статические привязки не используются, сразу создаётся новая сессия с новым исходящим UDP-портом. Полезно, когда DPI банит конкретную пару IP:порт."
+
+msgid "Max Dummy Data"
+msgstr "Макс. пустых данных"
+
+msgid "Maximum dummy data length for packets (0-255)"
+msgstr "Максимальная длина пустых данных в пакетах (0-255)"
+
+msgid "Allow Non-Obfuscated Clients"
+msgstr "Разрешить необфусцированных клиентов"
+
+msgid "For servers only: accept clients that send plain (non-obfuscated) WireGuard traffic and forward it as is, in both directions. Disables automatic obfuscation direction detection, so do not enable it on the client side. Not compatible with static bindings."
+msgstr "Только для серверов: принимать клиентов, отправляющих обычный (необфусцированный) трафик WireGuard, и пересылать его как есть в обе стороны. Отключает автоматическое определение направления обфускации, поэтому не включайте на стороне клиента. Несовместимо со статическими привязками."
+
+msgid "Firewall Mark"
+msgstr "Метка фаервола"
+
+msgid "Firewall mark for packets (0 to disable)"
+msgstr "Метка фаервола для пакетов (0 для отключения)"
+
+msgid "Static Bindings"
+msgstr "Статические привязки"
+
+msgid "Static bindings for two-way mode. Enter each binding as ip:port:localport, one per line."
+msgstr "Статические привязки для двустороннего режима. Вводите каждую привязку как ip:порт:локальный_порт, по одной на строку."
+
+# Service status template
+msgid "Service Status"
+msgstr "Состояние сервиса"
+
+msgid "Running"
+msgstr "Работает"
+
+msgid "Stopped"
+msgstr "Остановлен"
+
+msgid "Configuration"
+msgstr "Конфигурация"
+
+msgid "Exists"
+msgstr "Существует"
+
+msgid "Not found"
+msgstr "Не найдена"
+
+msgid "Enabled instances"
+msgstr "Включено экземпляров"
+
+# Control buttons template
+msgid "Restart Service"
+msgstr "Перезапустить сервис"
+
+msgid "Refresh Status"
+msgstr "Обновить статус"
+
+msgid "Processing..."
+msgstr "Обработка..."
+
+msgid "Action completed successfully"
+msgstr "Действие выполнено успешно"
+
+msgid "Action failed"
+msgstr "Действие не выполнено"
+
+msgid "Connection error"
+msgstr "Ошибка соединения"
+
+msgid "Restart WireGuard Obfuscator service?"
+msgstr "Перезапустить сервис WireGuard Obfuscator?"
+
+# Validation messages
+msgid "Target cannot be empty"
+msgstr "Целевой сервер не может быть пустым"
+
+msgid "Invalid format. Expected: host:port (e.g., example.com:51820)"
+msgstr "Неверный формат. Ожидается: хост:порт (например, example.com:51820)"
+
+msgid "Host cannot be empty"
+msgstr "Хост не может быть пустым"
+
+msgid "Invalid port. Must be between 1 and 65535"
+msgstr "Неверный порт. Должен быть от 1 до 65535"
+
+msgid "Invalid format. Expected: ip:port:localport"
+msgstr "Неверный формат. Ожидается: ip:порт:локальный_порт"
+
+msgid "Invalid IP address: "
+msgstr "Неверный IP адрес: "
+
+msgid "Invalid remote port: "
+msgstr "Неверный удалённый порт: "
+
+msgid "Invalid local port: "
+msgstr "Неверный локальный порт: "
+
