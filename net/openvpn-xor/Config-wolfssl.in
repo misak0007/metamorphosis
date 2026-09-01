@@ -39,7 +39,7 @@ config OPENVPN_wolfssl_ENABLE_PORT_SHARE
 
 config OPENVPN_wolfssl_ENABLE_IPROUTE2
 	bool "Enable support for iproute2"
-	default y
+	default n
 
 config OPENVPN_wolfssl_ENABLE_DCO
 	depends on !OPENVPN_wolfssl_ENABLE_IPROUTE2
